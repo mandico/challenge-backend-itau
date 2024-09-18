@@ -8,6 +8,11 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+    env:
+      TF_VAR_client_id: ${{ secrets.ARM_CLIENT_ID }}
+      TF_VAR_client_secret: ${{ secrets.ARM_CLIENT_SECRET }}
+      TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      TF_VAR_tenant_id: ${{ secrets.ARM_TENANT_ID }}
 
     steps:
     - name: Checkout repository
@@ -18,20 +23,10 @@ jobs:
       with:
         terraform_version: 1.0.0
 
-    - name: Create Terraform Variables File
-      uses: actions/create-file@v3
-      with:
-        path: terraform.tfvars
-        content: |
-          client_id = ${{ secrets.ARM_CLIENT_ID }}
-          client_secret = ${{ secrets.ARM_CLIENT_SECRET }}
-          subscription_id = ${{ secrets.ARM_SUBSCRIPTION_ID }}
-          tenant_id = ${{ secrets.ARM_TENANT_ID }}
-
     - name: Terraform Init
       working-directory: ./iac/azure
-      run: terraform init -var-file=terraform.tfvars
+      run: terraform init
 
     - name: Terraform Apply
       working-directory: ./iac/azure
-      run: terraform apply -var-file=terraform.tfvars -auto-approve
+      run: terraform apply -auto-approve
