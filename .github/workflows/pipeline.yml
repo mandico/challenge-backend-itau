@@ -74,5 +74,6 @@ jobs:
         curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
       
     - name: Deploy to AKS using Helm
+      working-directory: chart
       run: |
-        helm upgrade --install my-app ./helm-chart --set image.repository=${{ secrets.DOCKER_HUB_USERNAME }}/challenge --set image.tag=latest
+        helm upgrade --install my-app ./challenge --set image.repository=${{ secrets.DOCKER_HUB_USERNAME }}/challenge --set image.tag=latest
