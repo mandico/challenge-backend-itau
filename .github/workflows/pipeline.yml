@@ -79,4 +79,4 @@ jobs:
     - name: Deploy to AKS using Helm
       working-directory: chart
       run: |
-        helm upgrade --install challenge -n challenge ./challenge --set image.repository=luizmandico/challenge --set image.tag=latest
+        helm upgrade --install challenge -n challenge ./challenge --create-namespace --set image.repository=luizmandico/challenge --set image.tag=latest
