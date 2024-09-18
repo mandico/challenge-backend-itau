@@ -18,13 +18,13 @@ func NewJwtController(jwtService *service.JwtService) *JwtController {
 func (c *JwtController) ValidateJwt(ctx *gin.Context) {
 	token := ctx.Query("jwt")
 	if token == "" {
-		ctx.JSON(http.StatusBadRequest, gin.H{"message": "token não informado", "result": false})
+		ctx.JSON(http.StatusUnauthorized, gin.H{"message": "token não informado", "result": false})
 		return
 	}
 
 	result, err := c.jwtService.ValidateJwt(token)
 	if err != nil {
-		ctx.JSON(http.StatusBadRequest, gin.H{"message": err.Error(), "result": result})
+		ctx.JSON(http.StatusUnauthorized, gin.H{"message": err.Error(), "result": result})
 		return
 	}
 

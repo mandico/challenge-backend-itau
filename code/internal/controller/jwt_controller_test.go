@@ -34,22 +34,22 @@ func TestValidateJwt(t *testing.T) {
 		{
 			name:       "Invalid JWT",
 			jwt:        "eyJhbGciOiJzI1NiJ9.dfsdfsfryJSr2xrIjoiQWRtaW4iLCJTZrkIjoiNzg0MSIsIk5hbrUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05fsdfsIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg",
-			statusCode: http.StatusBadRequest,
+			statusCode: http.StatusUnauthorized,
 		},
 		{
 			name:       "JWT with invalid Claim Name",
 			jwt:        "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiRXh0ZXJuYWwiLCJTZWVkIjo4ODAzNywiTmFtZSI6Ik00cmlhIE9saXZpYSJ9.M24ssnXg3xtb5F0rvWUQyckc7JAA-RUY-8XXBo41138",
-			statusCode: http.StatusBadRequest,
+			statusCode: http.StatusUnauthorized,
 		},
 		{
 			name:       "JWT with more than 3 claims",
 			jwt:        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJSb2xlIjoiQWRtaW4iLCJTZWVkIjo3ODQxLCJPcmciOiJCUiIsIk5hbWUiOiJUb25pbmhvIEFyYXVqbyJ9.qADMPYJaRFwAatSsHGExu5H3BhaPYRsKmMLLa9FUcKg",
-			statusCode: http.StatusBadRequest,
+			statusCode: http.StatusUnauthorized,
 		},
 		{
 			name:       "JWT with invalid Role",
 			jwt:        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJSb2xlIjoiQmFuYW5hIiwiU2VlZCI6Nzg0MSwiTmFtZSI6IlRvbmluaG8gQXJhdWpvIn0.ZRgnjhurQDfo63j_FOjEGOw_bV72OIjaHZuz6Uz1ERM",
-			statusCode: http.StatusBadRequest,
+			statusCode: http.StatusUnauthorized,
 		},
 	}
 
