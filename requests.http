@@ -1,0 +1,50 @@
+#@FQDN=http://localhost:8888
+@FQDN=http://4.157.126.198
+@HOST=challenge-itau.local
+### CASE 01
+### JWT com as informações contidas atendem a descrição
+#{
+#  "Role": "Admin",
+#  "Seed": "7841",
+#  "Name": "Toninho Araujo"
+#}
+GET {{FQDN}}/validate
+    ?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJSb2xlIjoiQWRtaW4iLCJTZWVkIjoiNzg0MSIsIk5hbWUiOiJUb25pbmhvQXJhdWpvIn0.tGpW30PdezwBOSoLEMy54PwUen4TwZ243ke_EOC75CA
+    Host: {{HOST}}
+
+### CASE 02
+### JWT invalido
+GET {{FQDN}}/validate
+    ?jwt=eyJhbGciOiJzI1NiJ9.dfsdfsfryJSr2xrIjoiQWRtaW4iLCJTZrkIjoiNzg0MSIsIk5hbrUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05fsdfsIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg
+    Host: {{HOST}}
+
+### CASE 03
+### Claim Name possui caracter de números
+#{
+#  "Role": "External",
+#  "Seed": "88037",
+#  "Name": "M4ria Olivia"
+#}
+
+GET {{FQDN}}/validate
+    ?jwt=eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiRXh0ZXJuYWwiLCJTZWVkIjo4ODAzNywiTmFtZSI6Ik00cmlhIE9saXZpYSJ9.M24ssnXg3xtb5F0rvWUQyckc7JAA-RUY-8XXBo41138
+    Host: {{HOST}}
+
+### CASE 04
+### JWT foi encontrado mais de 3 claims.
+GET {{FQDN}}/validate
+    ?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJSb2xlIjoiQWRtaW4iLCJTZWVkIjo3ODQxLCJPcmciOiJCUiIsIk5hbWUiOiJUb25pbmhvIEFyYXVqbyJ9.qADMPYJaRFwAatSsHGExu5H3BhaPYRsKmMLLa9FUcKg
+    Host: {{HOST}}
+
+
+### CASE 05
+### JWT com Role invalida
+GET {{FQDN}}/validate
+    ?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJSb2xlIjoiQmFuYW5hIiwiU2VlZCI6Nzg0MSwiTmFtZSI6IlRvbmluaG8gQXJhdWpvIn0.ZRgnjhurQDfo63j_FOjEGOw_bV72OIjaHZuz6Uz1ERM
+    Host: {{HOST}}
+
+
+### INGRESS Public IP
+### curl -H "Host: {{HOST}}" http://4.157.126.198/health
+GET {{FQDN}}/health
+    Host: {{HOST}}
