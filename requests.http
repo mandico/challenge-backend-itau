@@ -1,5 +1,5 @@
-#@FQDN=http://localhost:8888
-@FQDN=http://4.157.126.198
+@FQDN=http://localhost:8888
+#@FQDN=http://4.157.126.198
 @HOST=challenge-itau.local
 ### CASE 01
 ### JWT com as informações contidas atendem a descrição
