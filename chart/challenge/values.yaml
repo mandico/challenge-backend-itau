@@ -53,7 +53,7 @@ ingress:
     - host: challenge-itau.local
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
