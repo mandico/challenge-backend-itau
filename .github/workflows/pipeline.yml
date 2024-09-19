@@ -53,7 +53,7 @@ jobs:
       with:
         context: code
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/challenge:latest
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/challenge:${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -79,4 +79,4 @@ jobs:
     - name: Deploy to AKS using Helm
       working-directory: chart
       run: |
-        helm upgrade --install challenge -n challenge ./challenge --create-namespace --set image.repository=luizmandico/challenge --set image.tag=latest
+        helm upgrade --install challenge -n challenge ./challenge --create-namespace --set image.repository=${{ secrets.DOCKER_HUB_USERNAME }}/challenge --set image.tag=${{ github.sha }}
