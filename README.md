@@ -49,3 +49,40 @@ Esta função verifica se o token possui mais de 3 claims. Ela retorna true se h
 Esta função verifica se um número é primo. Ela retorna true se o número for primo e false caso contrário.
 
 ---
+
+### Estrutura Repositório
+
+```
+.
+├── Insomnia.yaml                              >>> Colections Insomnia
+├── README.md                                  >>> README
+├── chart                                      >>> Estrutura Helm Chart
+│   └── challenge
+│       ├── Chart.yaml
+│       ├── charts
+│       ├── templates
+│       │   ├── NOTES.txt
+│       │   ├── _helpers.tpl
+│       │   ├── deployment.yaml
+│       │   ├── ingress.yaml
+│       │   └── service.yaml
+│       └── values.yaml
+├── code                                       >>> Estrutura Código Fonte
+│   ├── Dockerfile                             >>> Dockerfile
+│   ├── cmd
+│   │   └── main.go
+│   ├── go.mod
+│   ├── go.sum
+│   └── internal
+│       ├── controller
+│       │   ├── jwt_controller.go
+│       │   └── jwt_controller_test.go         >>> Testes Unitários
+│       └── service
+│           ├── jwt_service.go
+│           └── prime.go
+├── iac                                        >>> Infrastructure as a Code
+│   └── azure
+│       ├── main.tf
+│       └── variables.tf
+└── requests.http                              >>> Collection REST Client
+```
