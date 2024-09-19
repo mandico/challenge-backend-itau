@@ -121,3 +121,22 @@ graph LR
 
 ![CI](./docs/img/ci.png)
 ![CD](./docs/img/cd.png)
+---
+
+### Arquitetura
+
+```
+kubectl get nodes -o custom-columns=NAME:'{.metadata.name}',REGION:'{.metadata.labels.topology\.kubernetes\.io/region}',ZONE:'{metadata.labels.topology\.kubernetes\.io/zone}'
+NAME                              REGION   ZONE
+aks-default-35285299-vmss000000   eastus   eastus-2
+aks-default-35285299-vmss000001   eastus   eastus-3
+aks-default-35285299-vmss000002   eastus   eastus-1
+
+
+kubectl get pods -n challenge -o wide
+NAME                         READY   STATUS    RESTARTS   AGE   IP           NODE                              NOMINATED NODE   READINESS GATES
+challenge-5f694b8f7b-hdr9v   1/1     Running   0          22m   10.244.1.8   aks-default-35285299-vmss000001   <none>           <none>
+challenge-5f694b8f7b-m2sms   1/1     Running   0          22m   10.244.2.3   aks-default-35285299-vmss000002   <none>           <none>
+challenge-5f694b8f7b-psz9m   1/1     Running   0          22m   10.244.0.6   aks-default-35285299-vmss000000   <none>           <none>
+```
+![Architecture](./docs/img/architecture.png)
