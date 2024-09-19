@@ -82,4 +82,13 @@ nodeSelector: {}
 
 tolerations: []
 
-affinity: {}
+affinity:
+  podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+    - labelSelector:
+      matchExpressions:
+      - key: "app.kubernetes.io/version"
+        operator: "In"
+        values:
+        - {{ .Chart.AppVersion | quote }}
+      topologyKey: "topology.kubernetes.io/zone"
