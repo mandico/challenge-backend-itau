@@ -19,8 +19,6 @@ func main() {
 			"status": "UP",
 		})
 	})
-
 	r.GET("/validate", jwtController.ValidateJwt)
-
 	r.Run(":8888")
 }
