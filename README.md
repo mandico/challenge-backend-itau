@@ -1,20 +1,26 @@
-![ITAÚ](./docs/img/itau.png)
+<p align="center">
+<img src="./docs/img/itau.png" style="width:247px;height:143px;" />
+</p>
+
 # Challenge - Luiz Mandico
 ---
-![GO](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
-![DOCKER](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
-![TERRAFORM](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
+<p align="center">
+<img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white"/>
+<img src="https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white"/>
+<img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white"/>
+</p>
 
-![Workflow Pipeline](https://github.com/mandico/challenge-backend-itau/actions/workflows/pipeline.yml/badge.svg)
-
-![Workflow IaC - Azure](https://github.com/mandico/challenge-backend-itau/actions/workflows/iac_azure.yml/badge.svg)
+<p align="center">
+<img src="https://github.com/mandico/challenge-backend-itau/actions/workflows/pipeline.yml/badge.svg"/>
+<img src="https://github.com/mandico/challenge-backend-itau/actions/workflows/iac_azure.yml/badge.svg"/>
+</p>
 
 ### Pré-requisitos
 - [Go](https://golang.org/doc/install) (versão 1.22.2 ou superior)
 - [Docker](https://docs.docker.com/get-docker/)
 - [Helm](https://helm.sh/docs/intro/install/)
 - [Terraform](https://www.terraform.io/downloads.html)
-- [AWS CLI](https://aws.amazon.com/cli/)
+- [Kubectl](https://kubernetes.io/docs/tasks/tools/)
 
 --- 
 ### Executando o Projeto
@@ -92,6 +98,13 @@ Esta função verifica se um número é primo. Ela retorna true se o número for
 │       └── service
 │           ├── jwt_service.go
 │           └── prime.go
+├── docs
+│   ├── architecture.drawio
+│   └── img
+│       ├── architecture.png
+│       ├── cd.png
+│       ├── ci.png
+│       └── itau.png
 ├── iac                                        >>> Infrastructure as Code
 │   └── azure
 │       ├── main.tf
@@ -123,7 +136,7 @@ graph LR
 ![CD](./docs/img/cd.png)
 ---
 
-### Arquitetura
+### Arquitetura / Resiliência
 
 ```
 kubectl get nodes -o custom-columns=NAME:'{.metadata.name}',REGION:'{.metadata.labels.topology\.kubernetes\.io/region}',ZONE:'{metadata.labels.topology\.kubernetes\.io/zone}'
