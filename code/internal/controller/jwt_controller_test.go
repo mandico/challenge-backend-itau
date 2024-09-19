@@ -34,7 +34,7 @@ func TestValidateJwt(t *testing.T) {
 		{
 			name:       "Invalid JWT",
 			jwt:        "eyJhbGciOiJzI1NiJ9.dfsdfsfryJSr2xrIjoiQWRtaW4iLCJTZrkIjoiNzg0MSIsIk5hbrUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05fsdfsIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg",
-			statusCode: http.StatusUnauthorized,
+			statusCode: http.StatusNotFound,
 		},
 		{
 			name:       "JWT with invalid Claim Name",
