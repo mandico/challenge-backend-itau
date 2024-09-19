@@ -1,4 +1,4 @@
-name: Pipeline Challenge
+name: APP - Pipeline
 
 on:
   push:

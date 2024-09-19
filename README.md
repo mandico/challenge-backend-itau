@@ -1,5 +1,13 @@
+![ITAÚ](./docs/img/itau.png)
 # Challenge - Luiz Mandico
 ---
+![GO](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![DOCKER](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
+![TERRAFORM](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
+
+![Workflow Pipeline](https://github.com/mandico/challenge-backend-itau/actions/workflows/pipeline.yml/badge.svg)
+
+![Workflow IaC - Azure](https://github.com/mandico/challenge-backend-itau/actions/workflows/iac_azure.yml/badge.svg)
 
 ### Pré-requisitos
 - [Go](https://golang.org/doc/install) (versão 1.22.2 ou superior)
