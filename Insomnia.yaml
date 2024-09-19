@@ -1,0 +1,298 @@
+_type: export
+__export_format: 4
+__export_date: 2024-09-18T20:53:09.078Z
+__export_source: insomnia.desktop.app:v10.0.0
+resources:
+  - _id: req_768d75096a3f47db9926e30999d2da6a
+    parentId: wrk_468356aa8ccd457488048dfc466302aa
+    modified: 1726689668084
+    created: 1726689183147
+    url: "{{base_url}}/health"
+    name: HealthCheck
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/10.0.0
+        id: pair_38259ecd14af4907bd31966d845cfcbd
+      - id: pair_6d68387c86324838ae1ad1321bfe7a66
+        name: Host
+        value: "{{host}}"
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1726535406386
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_468356aa8ccd457488048dfc466302aa
+    parentId: null
+    modified: 1726534023396
+    created: 1726534023396
+    name: Challenge
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_b2cb82283a2642fa8948398d78656e7d
+    parentId: wrk_468356aa8ccd457488048dfc466302aa
+    modified: 1726689794623
+    created: 1726535406286
+    url: "{{base_url}}/validate"
+    name: Case 01 - JWT OK
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_4989c9a62e834f068eabd0d089b54835
+        name: jwt
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJSb2xlIjoiQWRtaW4iLCJTZWVkIjoiNzg0MSIsIk5hbWUiOiJUb25pbmhvQXJhdWpvIn0.tGpW30PdezwBOSoLEMy54PwUen4TwZ243ke_EOC75CA
+        description: ""
+        disabled: false
+      - id: pair_a3d3350542d5471381c1df5516de6624
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/10.0.0
+        id: pair_e6678aecae1c4796964b69171962e5a4
+      - id: pair_43e1574fa3dd4cce8237a3ac10b84d68
+        name: Host
+        value: "{{host}}"
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1726535406286
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_febe04acf7d74640bc72d348c892d180
+    parentId: wrk_468356aa8ccd457488048dfc466302aa
+    modified: 1726689816552
+    created: 1726535535639
+    url: "{{base_url}}/validate"
+    name: Case 02 - JWT NOK
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_4989c9a62e834f068eabd0d089b54835
+        name: jwt
+        value: eyJhbGciOiJzI1NiJ9.dfsdfsfryJSr2xrIjoiQWRtaW4iLCJTZrkIjoiNzg0MSIsIk5hbrUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05fsdfsIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg
+        description: ""
+        disabled: false
+      - id: pair_a3d3350542d5471381c1df5516de6624
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/10.0.0
+        id: pair_2d310f7f8e4b42c3a448ff208c4a53a6
+      - id: pair_3c7811df6a744edf9bd824cb17b73dfd
+        name: Host
+        value: "{{host}}"
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1726535406236
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6060003248304702b5099e18f9e49541
+    parentId: wrk_468356aa8ccd457488048dfc466302aa
+    modified: 1726689878295
+    created: 1726535554510
+    url: "{{base_url}}/validate"
+    name: Case 03 - JWT - Claim Nome Invalido
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_4989c9a62e834f068eabd0d089b54835
+        name: jwt
+        value: eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiRXh0ZXJuYWwiLCJTZWVkIjo4ODAzNywiTmFtZSI6Ik00cmlhIE9saXZpYSJ9.M24ssnXg3xtb5F0rvWUQyckc7JAA-RUY-8XXBo41138
+        description: ""
+        disabled: false
+      - id: pair_a3d3350542d5471381c1df5516de6624
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/10.0.0
+        id: pair_e74b9ef6f9cb4468b719c660e8018c22
+      - id: pair_3be3335e2f7b4351bdd5c02f30384576
+        name: Host
+        value: "{{host}}"
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1726535406186
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_223877432e89409292e466eda9d6937e
+    parentId: wrk_468356aa8ccd457488048dfc466302aa
+    modified: 1726689910568
+    created: 1726689899910
+    url: "{{base_url}}/validate"
+    name: Case 04 - JWT - Mais de 3 Claims
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_4989c9a62e834f068eabd0d089b54835
+        name: jwt
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJSb2xlIjoiQWRtaW4iLCJTZWVkIjo3ODQxLCJPcmciOiJCUiIsIk5hbWUiOiJUb25pbmhvIEFyYXVqbyJ9.qADMPYJaRFwAatSsHGExu5H3BhaPYRsKmMLLa9FUcKg
+        description: ""
+        disabled: false
+      - id: pair_a3d3350542d5471381c1df5516de6624
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/10.0.0
+        id: pair_e74b9ef6f9cb4468b719c660e8018c22
+      - id: pair_3be3335e2f7b4351bdd5c02f30384576
+        name: Host
+        value: "{{host}}"
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1726535406136
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_018fa00fab994b959202f85a7d4dfe75
+    parentId: wrk_468356aa8ccd457488048dfc466302aa
+    modified: 1726689953238
+    created: 1726689941092
+    url: "{{base_url}}/validate"
+    name: Case 05 - JWT - Claim Role Invalida
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_4989c9a62e834f068eabd0d089b54835
+        name: jwt
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJSb2xlIjoiQmFuYW5hIiwiU2VlZCI6Nzg0MSwiTmFtZSI6IlRvbmluaG8gQXJhdWpvIn0.ZRgnjhurQDfo63j_FOjEGOw_bV72OIjaHZuz6Uz1ERM
+        description: ""
+        disabled: false
+      - id: pair_a3d3350542d5471381c1df5516de6624
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/10.0.0
+        id: pair_e74b9ef6f9cb4468b719c660e8018c22
+      - id: pair_3be3335e2f7b4351bdd5c02f30384576
+        name: Host
+        value: "{{host}}"
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1726535406086
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_8bf5908f3860c91078522fab05c6f9726297ce76
+    parentId: wrk_468356aa8ccd457488048dfc466302aa
+    modified: 1726689440372
+    created: 1726534023398
+    name: Base Environment
+    data:
+      base_url: http://localhost:8888
+      host: ""
+    dataPropertyOrder:
+      "&":
+        - base_url
+        - host
+    color: null
+    isPrivate: false
+    metaSortKey: 1726534023398
+    _type: environment
+  - _id: jar_8bf5908f3860c91078522fab05c6f9726297ce76
+    parentId: wrk_468356aa8ccd457488048dfc466302aa
+    modified: 1726534023399
+    created: 1726534023399
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: env_df2f78465fdb4c299ebaafe246a29bff
+    parentId: env_8bf5908f3860c91078522fab05c6f9726297ce76
+    modified: 1726689508193
+    created: 1726689241217
+    name: Local
+    data:
+      base_url: http://localhost:8888
+      host: ""
+    dataPropertyOrder:
+      "&":
+        - base_url
+        - host
+    color: "#0055ff"
+    isPrivate: false
+    metaSortKey: 1726689241217
+    _type: environment
+  - _id: env_72d818a0990245b09d1ec47d3efb4559
+    parentId: env_8bf5908f3860c91078522fab05c6f9726297ce76
+    modified: 1726689536711
+    created: 1726689455878
+    name: Public
+    data:
+      base_url: http://4.157.126.198
+      host: challenge-itau.local
+    dataPropertyOrder:
+      "&":
+        - base_url
+        - host
+    color: "#ff0000"
+    isPrivate: false
+    metaSortKey: 1726689241267
+    _type: environment

@@ -108,5 +108,4 @@ func hasMoreThanThreeClaims(claims map[string]interface{}) bool {
 		}
 	}
 	return status
-
 }
