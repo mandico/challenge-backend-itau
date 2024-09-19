@@ -286,7 +286,7 @@ resources:
     created: 1726689455878
     name: Public
     data:
-      base_url: http://4.157.126.198
+      base_url: http://57.152.68.224
       host: challenge-itau.local
     dataPropertyOrder:
       "&":
