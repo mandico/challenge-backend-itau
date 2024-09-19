@@ -54,6 +54,10 @@ Esta função verifica se um número é primo. Ela retorna true se o número for
 
 ```
 .
+├── .github
+│   └── workflows
+│       ├── iac_azure.yml                      >>> Workflow Pipeline IaC
+│       └── pipeline.yml                       >>> Workflow Pipeline Application
 ├── Insomnia.yaml                              >>> Colections Insomnia
 ├── README.md                                  >>> README
 ├── chart                                      >>> Estrutura Helm Chart
@@ -80,9 +84,32 @@ Esta função verifica se um número é primo. Ela retorna true se o número for
 │       └── service
 │           ├── jwt_service.go
 │           └── prime.go
-├── iac                                        >>> Infrastructure as a Code
+├── iac                                        >>> Infrastructure as Code
 │   └── azure
 │       ├── main.tf
 │       └── variables.tf
 └── requests.http                              >>> Collection REST Client
 ```
+---
+
+### Pipeline CI/CD
+
+```mermaid
+graph LR
+    A[Checkout Code] --> B[Setup Go]
+    B --> C[Cache Go Modules]
+    C --> D[Install Dependencies]
+    D --> E[Run Tests]
+    E --> F[Run Build Image Multistage]
+    F --> G[Push Image to Registry]
+```
+```mermaid
+graph LR
+    A[Checkout Code] --> B[Login Cloud]
+    B --> C[Setup Kubernetes]
+    C --> D[Install Helm]
+    D --> E[Deploy using Helm]
+```
+
+![CI](./docs/img/ci.png)
+![CD](./docs/img/cd.png)
