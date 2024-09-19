@@ -87,8 +87,8 @@ affinity:
     requiredDuringSchedulingIgnoredDuringExecution:
     - labelSelector:
       matchExpressions:
-      - key: "app.kubernetes.io/version"
+      - key: "app.kubernetes.io/name"
         operator: "In"
         values:
-        - {{ .Chart.AppVersion | quote }}
+        - "challenge"
       topologyKey: "topology.kubernetes.io/zone"
